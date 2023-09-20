@@ -1,0 +1,137 @@
+{
+    "pizza":[
+        {"id":1,
+         "name":"Chisburger-pizza",
+         "src":"./public/pizza/pizza1.png",
+         "filter":{
+            "Meat":true,
+            "Vegan":false,
+            "Grill":true,
+            "Hot":false,
+            "Close":true
+         },
+         "type":{"thin":[
+            {"small":true, "price":200},
+            {"medium":true,"price":240},
+            {"large":true, "price":300}
+            
+         ], "traditional":[
+            {"small":true, "price":220},
+            {"medium":false,"price":260},
+            {"large":true, "price":320}
+         ] } 
+    
+        },
+        {"id":2,
+         "name":"Cheese",
+         "src":"./public/pizza/pizza2.png",
+         "filter":{
+            "Meat":false,
+            "Vegan":true,
+            "Grill":false,
+            "Hot":false,
+            "Close":false
+         },
+         "type":{"thin":[
+            {"small":true, "price":160},
+            {"medium":true,"price":200},
+            {"large":true, "price":240}
+            
+         ], "traditional":[
+            {"small":true, "price":200},
+            {"medium":true,"price":240},
+            {"large":true, "price":280}
+         ] } 
+    
+        },
+        {"id":3,
+         "name":"Asian style shrimp",
+         "src":"./public/pizza/pizza3.png",
+         "filter":{
+            "Meat":true,
+            "Vegan":false,
+            "Grill":false,
+            "Hot":true,
+            "Close":false
+         },
+         "type":{"thin":[
+            {"small":false, "price":260},
+            {"medium":false,"price":300},
+            {"large":true, "price":340}
+            
+         ], "traditional":[
+            {"small":false, "price":280},
+            {"medium":false,"price":320},
+            {"large":false, "price":360}
+         ] } 
+    
+        },
+        {"id":4,
+         "name":"Сырный цыпленок",
+         "src":"./public/pizza/pizza4.png",
+         "filter":{
+            "Meat":true,
+            "Vegan":false,
+            "Grill":true,
+            "Hot":true,
+            "Close":true
+         },
+         "type":{"thin":[
+            {"small":true, "price":200},
+            {"medium":false,"price":240},
+            {"large":true, "price":280}
+            
+         ], "traditional":[
+            {"small":true, "price":220},
+            {"medium":false,"price":260},
+            {"large":true, "price":300}
+         ] } 
+    
+        },
+        {"id":5,
+         "name":"Hawaiian",
+         "src":"./public/pizza/pizza2.png",
+         "filter":{
+            "Meat":true,
+            "Vegan":false,
+            "Grill":false,
+            "Hot":false,
+            "Close":false
+         },
+         "type":{"thin":[
+            {"small":true, "price":180},
+            {"medium":true,"price":220},
+            {"large":true, "price":240}
+            
+         ], "traditional":[
+            {"small":true, "price":200},
+            {"medium":true,"price":240},
+            {"large":true, "price":280}
+         ] } 
+    
+        },
+        {"id":6,
+         "name":"Hot",
+         "src":"./public/pizza/pizza4.png",
+         "filter":{
+            "Meat":true,
+            "Vegan":false,
+            "Grill":true,
+            "Hot":true,
+            "Close":true
+         },
+         "type":{"thin":[
+            {"small":false, "price":200},
+            {"medium":false,"price":240},
+            {"large":false, "price":280}
+            
+         ], "traditional":[
+            {"small":true, "price":220},
+            {"medium":true,"price":260},
+            {"large":true, "price":300}
+         ] } 
+    
+        }
+    
+    ]
+}
