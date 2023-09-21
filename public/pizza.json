@@ -1,7 +1,7 @@
 [
     {"id":1,
      "name":"Chisburger-pizza",
-     "src":"./public/pizza/pizza1.png",
+     "src":"./pizza/pizza1.png",
      "navigate":{
         "All":true,
         "Meat":true,
@@ -18,7 +18,7 @@
     },
     {"id":2,
      "name":"Cheese",
-     "src":"./public/pizza/pizza2.png",
+     "src":"./pizza/pizza2.png",
      "navigate":{
         "All":true,
         "Meat":false,
@@ -35,7 +35,7 @@
     },
     {"id":3,
      "name":"Asian style shrimp",
-     "src":"./public/pizza/pizza3.png",
+     "src":"./pizza/pizza3.png",
      "navigate":{
         "All":true,
         "Meat":true,
@@ -52,7 +52,7 @@
     },
     {"id":4,
      "name":"Сheese chicken",
-     "src":"./public/pizza/pizza4.png",
+     "src":"./pizza/pizza4.png",
      "navigate":{
         "All":true,
         "Meat":true,
@@ -69,7 +69,7 @@
     },
     {"id":5,
      "name":"Hawaiian",
-     "src":"./public/pizza/pizza2.png",
+     "src":"./pizza/pizza2.png",
      "navigate":{
         "All":true,
         "Meat":true,
@@ -86,7 +86,7 @@
     },
     {"id":6,
      "name":"Hot",
-     "src":"./public/pizza/pizza4.png",
+     "src":"./pizza/pizza4.png",
      "navigate":{
         "All":true,
         "Meat":true,
