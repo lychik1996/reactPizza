@@ -11,16 +11,10 @@
             "Spicy":false,
             "Close":true
          },
-         "type":{"thin":[
-            {"small":true, "price":200},
-            {"medium":true,"price":240},
-            {"large":true, "price":300}
-            
-         ], "traditional":[
-            {"small":true, "price":220},
-            {"medium":false,"price":260},
-            {"large":true, "price":320}
-         ] } 
+         "type":[0, 1],
+         "size":[26, 40],
+         "price": [200, 240, 280, 220, 260, 300 ],
+         "rating":5
 
         },
         {"id":2,
@@ -34,16 +28,10 @@
             "Hot":false,
             "Close":false
          },
-         "type":{"thin":[
-            {"small":true, "price":160},
-            {"medium":true,"price":200},
-            {"large":true, "price":240}
-            
-         ], "traditional":[
-            {"small":true, "price":200},
-            {"medium":true,"price":240},
-            {"large":true, "price":280}
-         ] } 
+         "type":[0, 1],
+         "size":[30, 40],
+         "price": [220, 260, 290, 250, 280, 310 ],
+         "rating":6
 
         },
         {"id":3,
@@ -57,16 +45,10 @@
             "Spicy":true,
             "Close":false
          },
-         "type":{"thin":[
-            {"small":false, "price":260},
-            {"medium":false,"price":300},
-            {"large":true, "price":340}
-            
-         ], "traditional":[
-            {"small":false, "price":280},
-            {"medium":false,"price":320},
-            {"large":false, "price":360}
-         ] } 
+         "type":[0],
+         "size":[40],
+         "price": [240, 260, 280, 260, 280, 300 ],
+         "rating":4
 
         },
         {"id":4,
@@ -80,16 +62,10 @@
             "Spicy":true,
             "Close":true
          },
-         "type":{"thin":[
-            {"small":true, "price":200},
-            {"medium":false,"price":240},
-            {"large":true, "price":280}
-            
-         ], "traditional":[
-            {"small":true, "price":220},
-            {"medium":false,"price":260},
-            {"large":true, "price":300}
-         ] } 
+         "type":[0, 1],
+         "size":[26],
+         "price": [180, 200, 220, 200, 220, 240 ],
+         "rating":2
 
         },
         {"id":5,
@@ -103,16 +79,10 @@
             "Spicy":false,
             "Close":false
          },
-         "type":{"thin":[
-            {"small":true, "price":180},
-            {"medium":true,"price":220},
-            {"large":true, "price":240}
-            
-         ], "traditional":[
-            {"small":true, "price":200},
-            {"medium":true,"price":240},
-            {"large":true, "price":280}
-         ] } 
+         "type":[0,1],
+         "size":[26, 30, 40],
+         "price": [230, 250, 270, 250, 270, 290 ],
+         "rating":3
 
         },
         {"id":6,
@@ -126,16 +96,10 @@
             "Spicy":true,
             "Close":true
          },
-         "type":{"thin":[
-            {"small":false, "price":200},
-            {"medium":false,"price":240},
-            {"large":false, "price":280}
-            
-         ], "traditional":[
-            {"small":true, "price":220},
-            {"medium":true,"price":260},
-            {"large":true, "price":300}
-         ] } 
+         "type":[1],
+         "size":[26, 40],
+         "price": [180, 200, 220, 200, 220, 240 ],
+         "rating":3
 
         }
 

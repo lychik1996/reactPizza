@@ -1,48 +1,122 @@
-import { useState } from "react"
+import { useState, useEffect } from 'react';
 
+export default function Pizza({ elem }) {
+  const thinAvaible = elem.type.some((item) => item === 0);
+  const tradAvaible = elem.type.some((item) => item === 1);
+  const sizeSmall = elem.size.some((item) => item === 26);
+  const sizeMedium = elem.size.some((item) => item === 30);
+  const sizeLarge = elem.size.some((item) => item === 40);
 
-export default function Pizza({elem,}){
-  const[addbasket, setAddbasket]=useState(0);
-  const [thinChange, setThinChange] = useState(true);
-  const [sizeChange,setSizeChange] = useState([true, false,false]);
+  const [addbasket, setAddbasket] = useState(0);
+  const [thinChange, setThinChange] = useState([
+    thinAvaible && true,
+    !thinAvaible && true,
+  ]);
+  const [sizeChange, setSizeChange] = useState([
+    sizeSmall && true,
+    !sizeSmall && sizeMedium && true,
+    !sizeSmall && !sizeMedium && true,
+  ]);
+  const [pricePizza, setPricePizza] = useState(0);
 
-  function changeThin(){
-    setThinChange(!thinChange)
+  useEffect(() => {
+    updatePrice(
+      thinChange.findIndex((selected) => selected),
+      sizeChange.findIndex((selected) => selected)
+    );
+  }, []); //add price in load page
+
+  function changeThin(index) {
+    const updateState = [false, false];
+    updateState[index] = true;
+    setThinChange(updateState);
+
+    updatePrice(
+      index,
+      sizeChange.findIndex((selected) => selected)
+    );
   }
 
-  function changeSize(index){
-    const updateState = [false,false,false];
+  function changeSize(index) {
+    const updateState = [false, false, false];
     updateState[index] = true;
     setSizeChange(updateState);
+
+    updatePrice(
+      thinChange.findIndex((selected) => selected),
+      index
+    );
   }
 
-  function addInbasket(){
-    setAddbasket(addbasket+1);
-  }
-    return(
-        <li className="main_item" id={elem.id}>
-          <img className="main_item_img" src={elem.src} alt="" />
-          <h2 className="main_item_name">{elem.name}</h2>
-          <div className="main_item_changes">
-            <div className="main_item_doughs">
-              <p className={`main_item_dough ${thinChange? "dough": ""}`} onClick={()=>changeThin()}>Thin</p>
-              <p className={`main_item_dough ${!thinChange? "dough":""}`} onClick={()=>changeThin()}>Traditional</p>
-            </div>
-            <div className="main_item_sizes">
-              <p className={`main_item_size ${sizeChange[0] ? "size": ""}`} onClick={()=>changeSize(0)}>26 cm.</p>
-              <p className={`main_item_size ${sizeChange[1] ? "size": ""}`} onClick={()=>changeSize(1)}>30 cm.</p>
-              <p className={`main_item_size ${sizeChange[2] ? "size": ""}`} onClick={()=>changeSize(2)}>40 cm.</p>
-            </div>
-          </div>
-          <div className="main_item_bot">
-            <p className="main_item_bot_price">from 200 grn.</p>
-            <div className="main_item_bot_btn" onClick={()=>addInbasket()}>
-              <p className="main_item_bot_btn_plus">+</p>
-              <p className="main_item_bot_btn_text"> Add</p>
-              {addbasket !== 0 && <div className="main_item_bot_quantity">{addbasket}</div>}
-              
-            </div>
-          </div>
-        </li>
-    )
+  function addInbasket() {
+    setAddbasket(addbasket + 1);
+  } //change btn
+
+  function updatePrice(thinIndex, sizeIndex) {
+    const priceIndex = thinIndex * 3 + sizeIndex;
+    setPricePizza(elem.price[priceIndex]);
+  } //update price pizza
+
+  return (
+    <li className="main_item" id={elem.id}>
+      <img className="main_item_img" src={elem.src} alt="" />
+      <h2 className="main_item_name">{elem.name}</h2>
+      <div className="main_item_changes">
+        <div className="main_item_doughs">
+          <p
+            className={`main_item_dough ${
+              thinAvaible ? (thinChange[0] ? 'dough' : '') : 'disable'
+            }`}
+            onClick={() => thinAvaible && changeThin(0)}
+          >
+            Thin
+          </p>
+          <p
+            className={`main_item_dough ${
+              tradAvaible ? (thinChange[1] ? 'dough' : '') : 'disable'
+            }`}
+            onClick={() => tradAvaible && changeThin(1)}
+          >
+            Traditional
+          </p>
+        </div>
+        <div className="main_item_sizes">
+          <p
+            className={`main_item_size ${
+              sizeSmall ? (sizeChange[0] ? 'size' : '') : 'disable'
+            }`}
+            onClick={() => sizeSmall && changeSize(0)}
+          >
+            26 cm.
+          </p>
+          <p
+            className={`main_item_size ${
+              sizeMedium ? (sizeChange[1] ? 'size' : '') : 'disable'
+            }`}
+            onClick={() => sizeMedium && changeSize(1)}
+          >
+            30 cm.
+          </p>
+          <p
+            className={`main_item_size ${
+              sizeLarge ? (sizeChange[2] ? 'size' : '') : 'disable'
+            }`}
+            onClick={() => sizeLarge && changeSize(2)}
+          >
+            40 cm.
+          </p>
+        </div>
+      </div>
+      <div className="main_item_bot">
+        <p className="main_item_bot_price">from {pricePizza} grn.</p>
+        <div className="main_item_bot_btn" onClick={() => addInbasket()}>
+          <p className="main_item_bot_btn_plus">+</p>
+          <p className="main_item_bot_btn_text"> Add</p>
+          {addbasket !== 0 && (
+            <div className="main_item_bot_quantity">{addbasket}</div>
+          )}
+        </div>
+      </div>
+    </li>
+  );
 }

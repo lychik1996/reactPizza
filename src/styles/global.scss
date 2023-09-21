@@ -243,12 +243,18 @@ h3{
                     padding-top: 8px;
                     height: 32px;
                     text-transform: uppercase;
+                    cursor: pointer;
 
                 }
                 .dough{
                     border-radius: 5px;
                     background: #FFF;
                     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+                    
+                }
+                .disable{
+                    cursor: default;
+                    opacity: 0.5;
                 }
             }
             .main_item_sizes{
@@ -263,12 +269,18 @@ h3{
                     text-align: center;
                     text-transform: uppercase;
                     padding-top: 8px;
+                    cursor: pointer;
 
                 }
                 .size{
                     border-radius: 5px;
                     background: #FFF;
                     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+                    
+                }
+                .disable{
+                    cursor: default;
+                    opacity: 0.5;
                 }
             }
         }
@@ -282,6 +294,7 @@ h3{
                 font-size: 22px;
                 font-weight: 700;
                 letter-spacing: 0.33px;
+                width: 120px;
             }
             .main_item_bot_btn{
                 width: 155px;
