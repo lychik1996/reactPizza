@@ -18,7 +18,7 @@ function App() {
     async function data() {
       await delay(1000);
       await axios
-        .get('http://localhost:3001/pizza')
+        .get('pizza.json')
         .then((res) => setPizza(res.data));
       setIsLoading(false);
     }
