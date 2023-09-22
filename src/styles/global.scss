@@ -161,30 +161,40 @@ button{
         }
         .navigate_right_sortby{
             position: relative;
+            width: 100px;
             color: #FE5F1E;
             text-decoration: underline dotted 2px;
-            .navigate_right_sort_items{
-                color: black;
-                position: absolute;
-                width: 132px;
+            div{
+                width: 200px;
                 height: 136px;
-                border-radius: 10px;
-                box-shadow: 0px 0px 20px rgba(0,0,0, 0.08);
-                left:-30px;
-                padding-top: 13px;
-                .navigate_right_sort_item{
-                    font-size: 14px;
-                    box-sizing: content-box;
-                    padding-top: 10px;     
-                    padding-left: 14px;   
-                    padding-bottom: 11px;
-                    
-                }
-                .focus{
-                    color: #FE5F1E;
-                    background: rgba(254, 95, 30, 0.05);
+                left:-110px;
+                position: absolute;
+                
+                .navigate_right_sort_items{
+                    color: black;
+                    position: absolute;
+                    width: 132px;
+                    height: 136px;
+                    border-radius: 10px;
+                    box-shadow: 0px 0px 20px rgba(0,0,0, 0.08);
+                    right: 0px;
+                    padding-top: 13px;
+                    background: white;
+                    .navigate_right_sort_item{
+                        font-size: 14px;
+                        box-sizing: content-box;
+                        padding-top: 10px;     
+                        padding-left: 14px;   
+                        padding-bottom: 11px;
+                        
+                    }
+                    .focus{
+                        color: #FE5F1E;
+                        background: rgba(254, 95, 30, 0.05);
+                    }
                 }
             }
+            
         }
             
     }
@@ -204,6 +214,7 @@ h3{
     row-gap: 65px;
     column-gap: 35px;
     padding-left: 60px;
+    padding-bottom: 60px;
     .main_item{
         display: flex;
         flex-direction: column;

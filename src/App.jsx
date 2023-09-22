@@ -100,36 +100,39 @@ function App() {
           <p className="navigate_right_sort"> Sort by: </p>
           <div className="navigate_right_sortby">
             {sort}
-            <ul
-              className="navigate_right_sort_items"
-              style={rightNavigate ? { display: 'none' } : {}}
-            >
-              <li
-                className={`navigate_right_sort_item ${
-                  sort === 'popularity' ? 'focus' : ''
-                }`}
-                onClick={() => sortBy('popularity')}
+            <div>
+              <ul
+                className="navigate_right_sort_items"
+                style={rightNavigate ? { display: 'none' } : {}}
               >
-                popularity
-              </li>
-              <li
-                className={`navigate_right_sort_item ${
-                  sort === 'by price' ? 'focus' : ''
-                }`}
-                onClick={() => sortBy('by price')}
-              >
-                {' '}
-                by price
-              </li>
-              <li
-                className={`navigate_right_sort_item ${
-                  sort === 'alphabetically' ? 'focus' : ''
-                }`}
-                onClick={() => sortBy('alphabetically')}
-              >
-                alphabetically
-              </li>
-            </ul>
+                <li
+                  className={`navigate_right_sort_item ${
+                    sort === 'popularity' ? 'focus' : ''
+                  }`}
+                  onClick={() => sortBy('popularity')}
+                >
+                  popularity
+                </li>
+                <li
+                  className={`navigate_right_sort_item ${
+                    sort === 'by price' ? 'focus' : ''
+                  }`}
+                  onClick={() => sortBy('by price')}
+                >
+                  {' '}
+                  by price
+                </li>
+                <li
+                  className={`navigate_right_sort_item ${
+                    sort === 'alphabetically' ? 'focus' : ''
+                  }`}
+                  onClick={() => sortBy('alphabetically')}
+                >
+                  alphabetically
+                </li>
+              </ul>
+            </div>
+            
           </div>
         </div>
       </div>
