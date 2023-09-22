@@ -7,7 +7,7 @@ export default function Pizza({ elem }) {
   const sizeMedium = elem.size.some((item) => item === 30);
   const sizeLarge = elem.size.some((item) => item === 40);
 
-  const [addbasket, setAddbasket] = useState(0);
+  const [addUpdate, setAddUpdate] = useState(0);
   const [thinChange, setThinChange] = useState([
     thinAvaible && true,
     !thinAvaible && true,
@@ -48,8 +48,9 @@ export default function Pizza({ elem }) {
     );
   }
 
-  function addInbasket() {
-    setAddbasket(addbasket + 1);
+  function addInUpdate() {
+    // updateBasket();
+    setAddUpdate(addUpdate + 1);
   } //change btn
 
   function updatePrice(thinIndex, sizeIndex) {
@@ -109,11 +110,11 @@ export default function Pizza({ elem }) {
       </div>
       <div className="main_item_bot">
         <p className="main_item_bot_price">from {pricePizza} grn.</p>
-        <div className="main_item_bot_btn" onClick={() => addInbasket()}>
+        <div className="main_item_bot_btn" onClick={() => addInUpdate()}>
           <p className="main_item_bot_btn_plus">+</p>
           <p className="main_item_bot_btn_text"> Add</p>
-          {addbasket !== 0 && (
-            <div className="main_item_bot_quantity">{addbasket}</div>
+          {addUpdate !== 0 && (
+            <div className="main_item_bot_quantity">{addUpdate}</div>
           )}
         </div>
       </div>

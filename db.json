@@ -52,7 +52,7 @@
 
         },
         {"id":4,
-         "name":"Сheese chicken",
+         "name":"Cheese chicken",
          "src":"./public/pizza/pizza4.png",
          "navigate":{
             "All":true,
