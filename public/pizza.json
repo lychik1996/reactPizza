@@ -1,105 +1,104 @@
 [
-    {"id":1,
-     "name":"Chisburger-pizza",
-     "src":"./pizza/pizza1.png",
-     "navigate":{
-        "All":true,
-        "Meat":true,
-        "Vegan":false,
-        "Grill":true,
-        "Spicy":false,
-        "Close":true
-     },
-     "type":[0, 1],
-     "size":[26, 40],
-     "price": [200, 240, 280, 220, 260, 300 ],
-     "rating":5
-
+  {
+    "id": 1,
+    "name": "Chisburger-pizza",
+    "src": "./pizza/pizza1.png",
+    "navigate": {
+      "All": true,
+      "Meat": true,
+      "Vegan": false,
+      "Grill": true,
+      "Spicy": false,
+      "Close": true
     },
-    {"id":2,
-     "name":"Cheese",
-     "src":"./pizza/pizza2.png",
-     "navigate":{
-        "All":true,
-        "Meat":false,
-        "Vegan":true,
-        "Grill":false,
-        "Hot":false,
-        "Close":false
-     },
-     "type":[0, 1],
-     "size":[30, 40],
-     "price": [220, 260, 290, 250, 280, 310 ],
-     "rating":6
-
+    "type": [0, 1],
+    "size": [26, 40],
+    "price": [200, 240, 280, 220, 260, 300],
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Cheese",
+    "src": "./pizza/pizza2.png",
+    "navigate": {
+      "All": true,
+      "Meat": false,
+      "Vegan": true,
+      "Grill": false,
+      "Hot": false,
+      "Close": false
     },
-    {"id":3,
-     "name":"Asian style shrimp",
-     "src":"./pizza/pizza3.png",
-     "navigate":{
-        "All":true,
-        "Meat":true,
-        "Vegan":false,
-        "Grill":false,
-        "Spicy":true,
-        "Close":false
-     },
-     "type":[0],
-     "size":[40],
-     "price": [240, 260, 280, 260, 280, 300 ],
-     "rating":4
-
+    "type": [0, 1],
+    "size": [30, 40],
+    "price": [220, 260, 290, 250, 280, 310],
+    "rating": 6
+  },
+  {
+    "id": 3,
+    "name": "Asian style shrimp",
+    "src": "./pizza/pizza3.png",
+    "navigate": {
+      "All": true,
+      "Meat": true,
+      "Vegan": false,
+      "Grill": false,
+      "Spicy": true,
+      "Close": false
     },
-    {"id":4,
-     "name":"Сheese chicken",
-     "src":"./pizza/pizza4.png",
-     "navigate":{
-        "All":true,
-        "Meat":true,
-        "Vegan":false,
-        "Grill":true,
-        "Spicy":true,
-        "Close":true
-     },
-     "type":[0, 1],
-     "size":[26],
-     "price": [180, 200, 220, 200, 220, 240 ],
-     "rating":2
-
+    "type": [0],
+    "size": [40],
+    "price": [240, 260, 280, 260, 280, 300],
+    "rating": 4
+  },
+  {
+    "id": 4,
+    "name": "Cheese chicken",
+    "src": "./pizza/pizza4.png",
+    "navigate": {
+      "All": true,
+      "Meat": true,
+      "Vegan": false,
+      "Grill": true,
+      "Spicy": true,
+      "Close": true
     },
-    {"id":5,
-     "name":"Hawaiian",
-     "src":"./pizza/pizza2.png",
-     "navigate":{
-        "All":true,
-        "Meat":true,
-        "Vegan":false,
-        "Grill":false,
-        "Spicy":false,
-        "Close":false
-     },
-     "type":[0,1],
-     "size":[26, 30, 40],
-     "price": [230, 250, 270, 250, 270, 290 ],
-     "rating":3
-
+    "type": [0, 1],
+    "size": [26],
+    "price": [180, 200, 220, 200, 220, 240],
+    "rating": 2
+  },
+  {
+    "id": 5,
+    "name": "Hawaiian",
+    "src": "./pizza/pizza2.png",
+    "navigate": {
+      "All": true,
+      "Meat": true,
+      "Vegan": false,
+      "Grill": false,
+      "Spicy": false,
+      "Close": false
     },
-    {"id":6,
-     "name":"Hot",
-     "src":"./pizza/pizza4.png",
-     "navigate":{
-        "All":true,
-        "Meat":true,
-        "Vegan":false,
-        "Grill":true,
-        "Spicy":true,
-        "Close":true
-     },
-     "type":[1],
-     "size":[26, 40],
-     "price": [180, 200, 220, 200, 220, 240 ],
-     "rating":3
-
-    }
-
+    "type": [0, 1],
+    "size": [26, 30, 40],
+    "price": [230, 250, 270, 250, 270, 290],
+    "rating": 3
+  },
+  {
+    "id": 6,
+    "name": "Hot",
+    "src": "./pizza/pizza4.png",
+    "navigate": {
+      "All": true,
+      "Meat": true,
+      "Vegan": false,
+      "Grill": true,
+      "Spicy": true,
+      "Close": true
+    },
+    "type": [1],
+    "size": [26, 40],
+    "price": [180, 200, 220, 200, 220, 240],
+    "rating": 3
+  }
 ]
