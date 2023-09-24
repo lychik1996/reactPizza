@@ -13,6 +13,7 @@ function App() {
   const [selectNavigate, setSelectNavigate] = useState('All');
   const [rightNavigate, setRightNavigate] = useState(true);
   const [sort, setSort] = useState('popularity');
+  const [changeBasket, setChangeBasket] = useState(true);
 
   const [basketItem, setBasketItem] = useState([]);
 
@@ -146,7 +147,7 @@ function App() {
   function BasketPage() {
     return (
       <div className="basket">
-        <div className="basket_notEmpty">
+        {changeBasket? <div className="basket_notEmpty">
           <div className="basket_header">
             <div className="basket_header_left">
               <img
@@ -162,7 +163,7 @@ function App() {
                 src="basket-clearall.svg"
                 alt=""
               />
-              <p className="basket_header_right_text">Clear basket</p>
+              <p className="basket_header_right_text" onClick={()=>setChangeBasket(!changeBasket)}>Clear basket</p>
             </div>
           </div>
           <ul className="basket_items">
@@ -258,13 +259,14 @@ function App() {
 
             <button className="basket_nvaigate_pay"> Pay now</button>
           </div>
-        </div>
-        {/* <div className='basket_empty'>
+        </div>:<div className='basket_empty'>
           <h3 className='basket_empty_top'>Basket is empty</h3>
           <p className='basket_empty_info'>Most likely, you haven't ordered pizza yet. To order pizza, go to the main page.</p>
           <img className='basket_empty_img' src="basket-empty.svg" alt="" />
           <Link to="/"><button className='basket_empty_back'>Move back</button></Link>
-        </div> */}
+        </div>}
+        
+        
       </div>
     );
   }
