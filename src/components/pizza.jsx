@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addSum } from '../store/pizza.slise';
 
 export default function Pizza({ elem }) {
   const thinAvaible = elem.type.some((item) => item === 0);
@@ -6,7 +8,7 @@ export default function Pizza({ elem }) {
   const sizeSmall = elem.size.some((item) => item === 26);
   const sizeMedium = elem.size.some((item) => item === 30);
   const sizeLarge = elem.size.some((item) => item === 40);
-
+  // const dispatch = useDispatch();
   const [addUpdate, setAddUpdate] = useState(0);
   const [thinChange, setThinChange] = useState([
     thinAvaible && true,
@@ -58,6 +60,13 @@ export default function Pizza({ elem }) {
     setPricePizza(elem.price[priceIndex]);
   } //update price pizza
 
+  function sumHeader(){
+    dispatch(addSum(pricePizza))
+  }
+  function add(){
+    addInUpdate();
+    sumHeader();
+  }
   return (
     <li className="main_item" id={elem.id}>
       <img className="main_item_img" src={elem.src} alt="" />
@@ -110,7 +119,7 @@ export default function Pizza({ elem }) {
       </div>
       <div className="main_item_bot">
         <p className="main_item_bot_price">from {pricePizza} grn.</p>
-        <div className="main_item_bot_btn" onClick={() => addInUpdate()}>
+        <div className="main_item_bot_btn" onClick={() => add()}>
           <p className="main_item_bot_btn_plus">+</p>
           <p className="main_item_bot_btn_text"> Add</p>
           {addUpdate !== 0 && (

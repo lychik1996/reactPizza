@@ -4,30 +4,49 @@ import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import MyLoader from './components/skeleton';
 import { Route, Routes, BrowserRouter, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import BasketPizza from './components/basketPizza';
+import { clearSum } from './store/pizza.slise';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
+const API = 'http://localhost:3001/'
 function App() {
   const [pizza, setPizza] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectNavigate, setSelectNavigate] = useState('All');
   const [rightNavigate, setRightNavigate] = useState(true);
   const [sort, setSort] = useState('popularity');
-  const [changeBasket, setChangeBasket] = useState(true);
-
-  const [basketItem, setBasketItem] = useState([]);
+  const [changeBasket, setChangeBasket] = useState(true);//time change
+  const sum = useSelector(state=>state.pizza.value);
+  const count = useSelector(state=>state.pizza.count);
+  const dispatch = useDispatch();
+  
+  const init = Array.from({ length: 10 }, (_, index) => ({
+    id: index + 1, // Присваиваем уникальный ID каждому элементу
+    // Другие свойства, которые вам нужны
+  }));
+  const [basketPizza, setBasketPizza] = useState( init );
+  
 
   useEffect(() => {
     async function data() {
       await delay(1000);
       await axios
-        .get('pizza.json')
+        .get(`${API}pizza`)
         .then((res) => setPizza(res.data));
+      // await axios
+      // .get(`${API}basket`)
+      // .then((res)=>setBasketPizza(res.data));
       setIsLoading(false);
+
     }
     data();
   }, []);
-
+  
+   function clearBasket(){
+    setChangeBasket(!changeBasket);
+    dispatch(clearSum());
+   }
   const emptyArray = new Array(6).fill(null); //array for skeleton
 
   const items = ['All', 'Meat', 'Vegan', 'Grill', 'Spicy', 'Close']; //array for navigate
@@ -163,91 +182,25 @@ function App() {
                 src="basket-clearall.svg"
                 alt=""
               />
-              <p className="basket_header_right_text" onClick={()=>setChangeBasket(!changeBasket)}>Clear basket</p>
+              <p className="basket_header_right_text" onClick={()=>clearBasket()}>Clear basket</p>
             </div>
           </div>
           <ul className="basket_items">
-            <li className="basket_item">
-              <img
-                className="basket_item_img"
-                src="./pizza/pizza1.png"
-                alt=""
-              />
-              <div className="basket_item_info">
-                <p className="basket_item_info_top">Cheese</p>
-                <p className="basket_item_info_bot">Thin dought, 26 cm.</p>
-              </div>
-              <div className="basket_item_change">
-                <div>
-                  <img
-                    className="basket_item_change_img"
-                    src="basket-minus.svg"
-                    alt=""
-                  />
-                </div>
-                <span className="basket_item_quantity">2</span>
-                <div>
-                  <img
-                    className="basket_item_change_img"
-                    src="basket-plus.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <span className="basket_item_price">440 grn.</span>
-              <div className="change_clear">
-                <img
-                  className="basket_item_clear"
-                  src="basket-clear.svg"
-                  alt=""
-                />
-              </div>
-            </li>
-            <li className="basket_item">
-              <img
-                className="basket_item_img"
-                src="./pizza/pizza1.png"
-                alt=""
-              />
-              <div className="basket_item_info">
-                <p className="basket_item_info_top">Cheese</p>
-                <p className="basket_item_info_bot">Thin dought, 26 cm.</p>
-              </div>
-              <div className="basket_item_change">
-                <div>
-                  <img
-                    className="basket_item_change_img"
-                    src="basket-minus.svg"
-                    alt=""
-                  />
-                </div>
-                <span className="basket_item_quantity">2</span>
-                <div>
-                  <img
-                    className="basket_item_change_img"
-                    src="basket-plus.svg"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <span className="basket_item_price">440 grn.</span>
-              <div className="change_clear">
-                <img
-                  className="basket_item_clear"
-                  src="basket-clear.svg"
-                  alt=""
-                />
-              </div>
-            </li>
+            {basketPizza.map((pizzaBas)=>(
+              <BasketPizza
+              key={pizzaBas.id}
+              pizzaBas={pizzaBas}/>
+            ))}
+            
           </ul>
           <div className="basket_quantity">
             <div className="basket_quantity_left">
               <p className="basket_quantity_pizza">Total pizzas: </p>
-              <p className="basket_quantity_pizzas"> 2 </p>
+              <p className="basket_quantity_pizzas"> {count}</p>
             </div>
             <div className="basket_quantity_right">
               <p className="basket_quantity_price">Order price: </p>
-              <p className="basket_quantity_summa"> 440grn. </p>
+              <p className="basket_quantity_summa"> {sum}grn. </p>
             </div>
           </div>
           <div className="basket_navigate">
@@ -287,10 +240,10 @@ function App() {
           </Link>
           <Link to="/basket">
             <div className="header_right">
-              <p className="header_right_price">1000 grn</p>
+              <p className="header_right_price">{sum} grn</p>
               <div className="header_right_string"></div>
               <img className="header_right_basket" src="basket.svg" alt="" />
-              <p className="header_right_basket_items">3</p>
+              <p className="header_right_basket_items">{count===0? undefined: count}</p>
             </div>
           </Link>
         </header>

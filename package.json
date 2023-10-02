@@ -11,10 +11,12 @@
     "start-dev": "npx concurrently \"npm run dev\" \"json-server --watch db.json --port 3001\""
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.6",
     "axios": "^1.5.0",
     "react": "^18.2.0",
     "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.3",
     "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
